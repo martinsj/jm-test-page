@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ororrah Landscaping | Beautiful Outdoor Spaces</title>
+  <title>Ororah Construction & Landscape | Beautiful Outdoor Spaces</title>
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* --- Base Reset & Typography --- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif; line-height: 1.6; color: #222;
       background: linear-gradient(180deg, #e8f5e9 0%, #f0f8ff 60%, #ffffff 100%);
@@ -16,24 +17,30 @@
 
     /* --- Navigation --- */
     nav {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
       background: rgba(255,255,255,0.9);
       backdrop-filter: blur(3px);
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      padding: 0.5rem 2rem; position: sticky; top: 0; z-index: 99;
+      padding: 0.5rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 99;
     }
-    nav ul { display: flex; gap: 1.5rem; justify-content: center; list-style: none; }
-    nav a { text-decoration: none; color: #222; font-weight: 600; }
+    .logo { height:48px; width:auto; }
+    @media(max-width:500px){ .logo{ height:36px; }}
+    .nav-links{display:flex;gap:1.5rem;list-style:none;}
+    .nav-links a{text-decoration:none;color:#222;font-weight:600;}
 
     /* --- Hero Banner --- */
     header {
       height: 70vh;
-      /* Change this if you want to change the top photo. Upload the photo under the 'img' folder */
-      background: url('img/herobanner.avif') center/cover no-repeat;
-    /*  background: url('https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; */
+      background: url('img/hero.jpg') center/cover no-repeat;
       display: flex; align-items: center; justify-content: center; position: relative; border-bottom-left-radius: 1.5rem; border-bottom-right-radius: 1.5rem;
       overflow: hidden;
     }
-    header::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); pointer-events: none; }
+    header::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
     header .content { position: relative; text-align: center; color: #fff; max-width: 90%; animation: fadeUp 1s ease-out; }
     h1 { font-size: 3rem; margin-bottom: 0.5rem; }
     p.tagline { font-size: 1.25rem; margin-bottom: 1.5rem; }
@@ -45,7 +52,7 @@
     .btn:hover { background: #388e3c; }
 
     /* --- Sections --- */
-    section { padding: 4rem 1.5rem; max-width: 1100px; margin: auto; }
+    section { padding: 4rem 1.5rem; max-width: 1100px; margin: auto; scroll-margin-top: 80px; }
 
     /* --- Services Grid --- */
     .services { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
@@ -60,6 +67,7 @@
 
     /* --- Footer --- */
     footer { background: #222; color: #eee; text-align: center; padding: 2rem 1rem; margin-top: 4rem; border-top-left-radius: 1.5rem; border-top-right-radius: 1.5rem; }
+    footer .logo{height:40px;width:auto;margin-bottom:0.75rem;}
 
     @media(max-width: 600px) { h1 { font-size: 2.25rem; } }
   </style>
@@ -67,17 +75,18 @@
 <body>
   <!-- Navigation -->
   <nav>
-    <ul>
+    <img src="img/ororrah_logo_variation_1_edit.PNG" alt="Ororah Construction & Landscape logo" class="logo">
+    <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Hero Banner -->
-  <header>
+  <header id="top">
     <div class="content">
-      <h1>Ororrah Landscaping</h1>
-      <p class="tagline">Transforming Ottawa yards into breathtaking outdoor escapes</p>
+      <h1>Ororah Construction & Landscape</h1>
+      <p class="tagline">Transforming Canadian yards into breathtaking outdoor escapes</p>
       <a href="#contact" class="btn">Request a Quote</a>
     </div>
   </header>
@@ -87,22 +96,22 @@
     <h2 style="text-align:center;margin-bottom:2rem;">Our Services</h2>
     <div class="services">
       <div class="service-card">
-        <img src="img/gardendesign.avif" alt="Custom garden with stone path and flowers">
+        <img src="img/garden.jpg" alt="Custom garden with stone path and flowers">
         <h3>Custom Garden Design</h3>
         <p>Create vibrant, low-maintenance gardens tailored to your lifestyle and local climate.</p>
       </div>
       <div class="service-card">
-        <img src="img/lawncare.avif" alt="Freshly laid sod lawn installation">
+        <img src="img/lawn.jpg" alt="Freshly laid sod lawn installation">
         <h3>Lawn Installation & Care</h3>
         <p>From fresh sod to eco-friendly turf alternatives, we keep your lawn lush and healthy.</p>
       </div>
       <div class="service-card">
-        <img src="img/hardscaping.avif" alt="Simple stone walkway and patio">
+        <img src="img/patio.jpg" alt="Simple stone walkway and patio">
         <h3>Hardscaping & Patios</h3>
         <p>Durable stone patios, walkways, and retaining walls built to withstand Canadian winters.</p>
       </div>
       <div class="service-card">
-        <img src="img/seasonalcleanup.avif" alt="Crew member raking autumn leaves during seasonal cleanup">
+        <img src="img/cleanup.jpg" alt="Crew member raking autumn leaves during seasonal cleanup">
         <h3>Seasonal Cleanup</h3>
         <p>Spring & fall clean-ups, pruning, mulching, and debris removal to keep your yard pristine.</p>
       </div>
@@ -126,7 +135,8 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Ororrah Landscaping. All rights reserved. Serving the Greater Ottawa Area.</p>
+    <img src="img/ororrah_logo_variation_1_edit.PNG" alt="Ororah Construction & Landscape logo" class="logo">
+    <p>&copy; 2025 Ororah Construction & Landscape. All rights reserved. Serving the Greater Toronto Area.</p>
   </footer>
 </body>
-</html>
+</
