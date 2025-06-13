@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /img/
+Sitemap: https://martinsj.github.io/jm-test-page/sitemap.xml
